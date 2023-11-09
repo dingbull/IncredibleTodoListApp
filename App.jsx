@@ -4,7 +4,7 @@
  * @format
  */
 
-import React from 'react';
+import React /*, {useState} */from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -20,12 +20,18 @@ import ToDoList from './src/ToDoList';
 
 
 function App() {
+  const [tasks, setTasks] = React.useState([
+    'Do laundry',
+    'Go to gym',
+    'Walk dog',
+    'Study'
+  ]);
+
   return (
     <SafeAreaView>
-      <ToDoList />
+      <ToDoList tasks={tasks}/>
       <ToDoForm />
       
-
     </SafeAreaView>
   );
 }
