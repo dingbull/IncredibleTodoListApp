@@ -27,11 +27,23 @@ function App() {
     'Study'
   ]);
 
+  const handleTask = (task) => {
+    /*const newTasks = tasks
+    
+    newTasks.push(task);
+    
+    setTasks(newTasks)
+
+    */
+
+    setTasks([...tasks, task]);
+  };
+
+
   return (
     <SafeAreaView>
       <ToDoList tasks={tasks}/>
-      <ToDoForm />
-      
+      <ToDoForm onAddTask={handleTask}/>
     </SafeAreaView>
   );
 }
